@@ -1,0 +1,118 @@
+/* =============================================================================
+   Reset basics
+   ========================================================================== */
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; font-size: 1em; line-height: 1.0; }
+body, button, input, select, textarea { font-family: "Times New Roman", Times, serif; color: #222; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+
+/* =============================================================================
+   Layout
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.alignleft {
+    float: left;
+    width: 33.33333%;
+    text-align: left;
+}
+.aligncenter {
+    float: left;
+    width: 33.33333%;
+    text-align: center;
+}
+.alignright {
+    float: left;
+    width: 33.33333%;
+    text-align: right;
+}
+
+.right { float: right; }
+.left { float: left; }
+
+.title {
+    line-height: 0em;
+    margin-bottom: -.1em;
+}
+
+.schoolname {
+    margin-bottom: 1.1em;
+    line-height: 0em;
+}
+.companyname {
+    font-weight: normal;
+    margin-bottom: 1.1em;
+    line-height: 0em;
+}
+.degree {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    line-height: 0em;
+}
+
+.counter_st {
+    text-align: right;
+    margin-top: -2em;
+    margin-bottom: 0em;
+    line-height: 0em;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.textbox {
+    text-align: right;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    line-height: 0em;
+}
+
+.role {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    line-height: 0em;
+}
+
+.responsibilities {
+    margin-top: 1em;
+    margin-bottom: 0em;
+    line-height: 1.25em;
+}
+
+.competencies_list {
+    list-style-type: none;
+    line-height: 1.25em;
+    padding-left: 0px;
+}
+
+.company { margin-bottom: 1.5em; }
+
+.btn {
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+}
+.btn:hover { background: #e8e8e8; }
+
+h1 { text-align: center; line-height: 1.2em; margin-bottom: 0.3em; }
+h2 { line-height: 0em; font-size: 1.3em; }
+h3 { line-height: 0em; }
+hr { margin-bottom: -.5em; }
+section { margin-bottom: 2em; }
+
+/* =============================================================================
+   Print styles
+   ========================================================================== */
+@media print {
+    .btn { display: none; }
+    a[href]:after { content: ""; }
+}

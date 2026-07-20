@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Jett Badalament-Tirrell | Resume</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="visitor_count.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <a href="Jett_Badalament-Tirrell_Resume.pdf" download="Jett_Badalament-Tirrell_Resume.pdf">
+            <button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button>
+        </a>
+        <h1 id="name">Jett Badalament-Tirrell</h1>
+        <div id="textbox" class="textbox">
+            <p class="alignleft">New York, NY</p>
+            <p class="aligncenter">631-579-7981</p>
+            <p class="alignright">jett.b.tirrell@gmail.com</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="textbox2" class="textbox">
+            <p class="alignleft"></p>
+            <p class="aligncenter"><a href="https://linkedin.com/in/jettbtirrell" target="_blank">linkedin.com/in/jettbtirrell</a></p>
+            <p class="alignright"></p>
+        </div>
+        <div style="clear: both;"></div>
+        <dt class="counter_st"></dt>
+    </header>
+
+    <main>
+        <section id="competencies">
+            <h2 class="title">SKILLS</h2>
+            <hr>
+            <ul class="competencies_list">
+                <li><b>Programming Languages:</b> Python (Pandas, Scikit-learn, PySpark, NumPy), SQL, R, Excel Functions</li>
+                <li><b>Machine Learning:</b> XGBoost, quantile regression, PyTorch, YOLOv8, RAG / FAISS, model evaluation</li>
+                <li><b>Platform Tooling:</b> AWS, Databricks, Docker, Jira</li>
+                <li><b>Professional Certifications:</b> Databricks Certified Data Engineer Associate, Databricks Certified Generative AI Engineer Associate, AWS Certified Cloud Practitioner</li>
+            </ul>
+        </section>
+
+        <section id="Professional Experience">
+            <h2 class="title">PROFESSIONAL EXPERIENCE</h2>
+            <hr>
+
+            <company class="company">
+                <h3 class="companyname"><b>Northwell Health</b>
+                    <span class="right"><i>New York, NY</i></span>
+                </h3>
+                <role class="role">
+                    <p>
+                        <span class="left"><i>Senior Corporate Financial Analyst</i></span>
+                        <span class="right"><i>June 2026 - Present</i></span>
+                        <br>
+                    </p>
+                    <responsibilities class="responsibilities">
+                        <ul>
+                            <li>Co-lead a decade-long legacy system modernization that transitioned Excel-based
+                                workflows to a full-stack web application and trained end users to ensure seamless
+                                adoption across CBO and Hospital posting teams
+                            </li>
+                        </ul>
+                    </responsibilities>
+                </role>
+                <role class="role">
+                    <p>
+                        <span class="left"><i>Corporate Financial Analyst</i></span>
+                        <span class="right"><i>September 2024 - May 2026</i></span>
+                        <br>
+                    </p>
+                    <responsibilities class="responsibilities">
+                        <ul>
+                            <li>Secured executive buy-in from Vice Presidents and Senior Managers, gaining approval
+                                to migrate 140 users onto the new platform and delivering nine training sessions to
+                                drive full adoption across the department
+                            </li>
+                            <li>Architected Python and SQL medallion pipelines (bronze, silver, gold) reconciling
+                                $24B+ in annual transactions across five banking institutions, four AR systems, and
+                                Northwell's General Ledger
+                            </li>
+                            <li>Automated Batch Distribution Form generation process for Epic Health Systems AR
+                                postings, saving an estimated 1,200 hours and $230,000+ in labor costs across
+                                ~3,500 monthly forms
+                            </li>
+                            <li>Designed and deployed a PowerApps platform backed by a relational SharePoint
+                                database for data entry, replacing an error-prone shared Excel system, and
+                                eliminating ~90% of data entry errors
+                            </li>
+                        </ul>
+                    </responsibilities>
+                </role>
+            </company>
+        </section>
+
+        <section id="personal_projects">
+            <h2 class="title">TECHNICAL PROJECTS</h2>
+            <hr>
+
+            <company class="company">
+                <h3 class="companyname"><b>AI Faceless Video Generation Platform</b></h3>
+                <responsibilities class="responsibilities">
+                    <ul>
+                        <li>Architected and deployed a full-stack AI video generation platform, developing the
+                            complete codebase in collaboration with Claude Code (VS Code integration) as an AI
+                            coding assistant
+                        </li>
+                        <li>Built a cloud-native backend on Neon (serverless Postgres), Upstash Redis for async
+                            job queue management, Render for long-running worker deployment, and Cloudflare R2
+                            for storage (no egress costs)
+                        </li>
+                    </ul>
+                </responsibilities>
+            </company>
+
+            <company class="company">
+                <h3 class="companyname"><b>Surgical Procedure Duration Forecasting</b></h3>
+                <responsibilities class="responsibilities">
+                    <ul>
+                        <li>Designed, trained, and deployed machine learning system to predict Mohs (skin cancer
+                            removal) surgery duration for UVA Health clinical operations, achieving &lt;10%
+                            prediction error on 90% of samples
+                        </li>
+                        <li>Applied XGBoost quantile regression on 10,000+ patient records in a Jupyter notebook
+                            using a remote GPU-powered server (Rivanna), demonstrating cloud-based compute
+                            practices for model training
+                        </li>
+                    </ul>
+                </responsibilities>
+            </company>
+
+            <company class="company">
+                <h3 class="companyname"><b>Travel Advisor LLM</b></h3>
+                <responsibilities class="responsibilities">
+                    <ul>
+                        <li>Built a production-style retrieval-augmented generation (RAG) pipeline leveraging LLMs
+                            and FAISS-based vector search over structured documents, reducing hallucinated
+                            locations by 3x
+                        </li>
+                        <li>Built evaluation pipelines to measure hallucination rate, and reasoning performance
+                            using GSM8K, and synthetic benchmarks
+                        </li>
+                    </ul>
+                </responsibilities>
+            </company>
+
+            <company class="company">
+                <h3 class="companyname"><b>Cloud Resume Challenge</b></h3>
+                <responsibilities class="responsibilities">
+                    <ul>
+                        <li>This site — built by hand on AWS (S3, CloudFront, Route 53, ACM, Lambda, API Gateway,
+                            DynamoDB) with IaC and CI/CD via GitHub Actions
+                        </li>
+                    </ul>
+                </responsibilities>
+            </company>
+        </section>
+
+        <section id="Education">
+            <h2 class="title">EDUCATION</h2>
+            <hr>
+            <school class="school">
+                <h3 class="schoolname">University of Virginia</h3>
+                <degree_ class="degree">
+                    <p>
+                        <span class="left">M.S. Data Science, GPA: 3.9/4.0</span><span class="right">May 2026</span>
+                    <div style="clear: both;"></div>
+                    <br>
+                    </p>
+                </degree_>
+                <degree_ class="degree">
+                    <p>
+                        <span class="left">B.A. Cognitive Science</span><span class="right"></span>
+                        <br>
+                    </p>
+                </degree_>
+            </school>
+        </section>
+    </main>
+</div> <!-- end container -->
+</body>
+</html>
