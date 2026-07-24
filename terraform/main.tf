@@ -77,6 +77,17 @@ resource "aws_iam_role_policy" "deploy_permissions" {
   })
 }
 
+resource "aws_dynamodb_table" "visitor_count" {
+  name         = "visitor-count"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "id"
+
+  attribute {
+    name = "id"
+    type = "S"
+  }
+}
+
 output "github_actions_role_arn" {
   value = aws_iam_role.github_actions_deploy.arn
 }
