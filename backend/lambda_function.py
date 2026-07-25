@@ -7,9 +7,9 @@ table = dynamodb.Table("visitor-count")
 def lambda_handler(event, context):
     response = table.update_item(
         Key={"id": "visitor-count"},
-        UpdateExpression="SET #c = #c + :incr",
+        UpdateExpression="SET #c = if_not_exists(#c, :start) + :incr",
         ExpressionAttributeNames={"#c": "count"},
-        ExpressionAttributeValues={":incr": 1},
+        ExpressionAttributeValues={":start": 0, ":incr": 1},
         ReturnValues="UPDATED_NEW"
     )
 
