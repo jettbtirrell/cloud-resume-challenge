@@ -1,6 +1,6 @@
 // TODO: replace this URL once the API Gateway + Lambda + DynamoDB backend is built
 // (see the "Cloud Resume Challenge" project plan).
-const VISITOR_COUNT_API = "https://rkzcj4msph.execute-api.us-east-1.amazonaws.com/read_count";
+const VISITOR_COUNT_API = "https://yh9t4k26u9.execute-api.us-east-1.amazonaws.com/read_count";
 
 function getCount() {
     return fetch(VISITOR_COUNT_API)
