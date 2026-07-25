@@ -204,11 +204,11 @@ resource "aws_apigatewayv2_stage" "default" {
 }
 
 resource "aws_lambda_permission" "api_gateway" {
-  statement_id  = "fd6ee26b-c7d8-5bc5-b5c9-c35295b82aa1"
+  statement_id  = "AllowAPIGatewayInvoke"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.visitor_count.function_name
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "arn:aws:execute-api:us-east-1:945219712931:rkzcj4msph/*/*/read_count"
+  source_arn    = "${aws_apigatewayv2_api.visitor_count.execution_arn}/*/*/read_count"
 }
 
 resource "aws_s3_bucket" "resume_site" {

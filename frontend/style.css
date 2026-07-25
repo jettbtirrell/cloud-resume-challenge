@@ -18,22 +18,6 @@ a:hover { color: #06e; }
     margin: 0 auto;
 }
 
-.alignleft {
-    float: left;
-    width: 33.33333%;
-    text-align: left;
-}
-.aligncenter {
-    float: left;
-    width: 33.33333%;
-    text-align: center;
-}
-.alignright {
-    float: left;
-    width: 33.33333%;
-    text-align: right;
-}
-
 .right { float: right; }
 .left { float: left; }
 
@@ -59,18 +43,18 @@ a:hover { color: #06e; }
 
 .counter_st {
     text-align: right;
-    margin-top: -2em;
+    margin-top: 0.5em;
     margin-bottom: 0em;
-    line-height: 0em;
+    line-height: 1.2em;
     font-size: 0.85em;
     color: #666;
 }
 
-.textbox {
-    text-align: right;
-    margin-top: 0em;
-    margin-bottom: 0em;
-    line-height: 0em;
+.contact-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
 }
 
 .role {
