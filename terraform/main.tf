@@ -285,3 +285,27 @@ resource "aws_cloudfront_distribution" "resume_site" {
     Name                     = "jett-resume-site"
   }
 }
+
+resource "aws_route53_record" "root" {
+  zone_id = "Z0234003OOTYC6RO8G4D"
+  name    = "jettbtirrell.com"
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.resume_site.domain_name
+    zone_id                = aws_cloudfront_distribution.resume_site.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_record" "www" {
+  zone_id = "Z0234003OOTYC6RO8G4D"
+  name    = "www.jettbtirrell.com"
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.resume_site.domain_name
+    zone_id                = aws_cloudfront_distribution.resume_site.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
