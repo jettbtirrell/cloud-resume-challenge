@@ -25,3 +25,5 @@ jobs:
 
       - name: Run tests
         run: python -m unittest discover backend/tests
+        env:
+          AWS_DEFAULT_REGION: us-east-1
