@@ -440,7 +440,8 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
           "s3:GetBucketLocation",
           "s3:GetBucketCORS",
           "s3:GetBucketWebsite",
-          "s3:GetAccelerateConfiguration"
+          "s3:GetAccelerateConfiguration",
+          "s3:GetBucketRequestPayment"
         ]
         Resource = "arn:aws:s3:::jett-cloud-resume-2026"
       },
