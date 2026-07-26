@@ -360,7 +360,8 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
           "lambda:UpdateFunctionConfiguration",
           "lambda:GetFunction",
           "lambda:GetPolicy",
-          "lambda:ListVersionsByFunction"
+          "lambda:ListVersionsByFunction",
+          "lambda:GetFunctionCodeSigningConfig"
         ]
         Resource = "arn:aws:lambda:us-east-1:945219712931:function:visitor-count-handler"
       },
@@ -436,7 +437,8 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
           "s3:GetBucketAcl",
           "s3:GetEncryptionConfiguration",
           "s3:ListBucket",
-          "s3:GetBucketLocation"
+          "s3:GetBucketLocation",
+          "s3:GetBucketCORS"
         ]
         Resource = "arn:aws:s3:::jett-cloud-resume-2026"
       },
