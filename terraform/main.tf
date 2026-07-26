@@ -439,7 +439,8 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
           "s3:ListBucket",
           "s3:GetBucketLocation",
           "s3:GetBucketCORS",
-          "s3:GetBucketWebsite"
+          "s3:GetBucketWebsite",
+          "s3:GetAccelerateConfiguration"
         ]
         Resource = "arn:aws:s3:::jett-cloud-resume-2026"
       },
@@ -464,9 +465,4 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
       }
     ]
   })
-}
-
-resource "aws_iam_role_policy_attachment" "backend_deploy_temp_admin" {
-  role       = aws_iam_role.github_actions_backend_deploy.name
-  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
