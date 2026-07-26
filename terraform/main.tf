@@ -4,6 +4,16 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 6.0"
     }
+    archive = {
+      source  = "hashicorp/archive"
+      version = "~> 2.0"
+    }
+  }
+
+  backend "s3" {
+    bucket = "jett-tfstate-2026"
+    key    = "cloud-resume-challenge/terraform.tfstate"
+    region = "us-east-1"
   }
 }
 
@@ -375,6 +385,19 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
         Effect = "Allow"
         Action = ["iam:GetRole", "iam:PassRole"]
         Resource = "arn:aws:iam::945219712931:role/service-role/visitor-count-handler-role-shfzwrmo"
+      },
+      {
+        Sid    = "TerraformStateAccess"
+        Effect = "Allow"
+        Action = [
+          "s3:GetObject",
+          "s3:PutObject",
+          "s3:ListBucket"
+        ]
+        Resource = [
+          "arn:aws:s3:::jett-tfstate-2026",
+          "arn:aws:s3:::jett-tfstate-2026/*"
+        ]
       }
     ]
   })
