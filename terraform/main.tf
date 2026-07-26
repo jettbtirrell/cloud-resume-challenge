@@ -470,3 +470,8 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
     ]
   })
 }
+
+resource "aws_iam_role_policy_attachment" "backend_deploy_readonly" {
+  role       = aws_iam_role.github_actions_backend_deploy.name
+  policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+}
