@@ -9,7 +9,6 @@ terraform {
 
 provider "aws" {
   region  = "us-east-1"
-  profile = "sandbox"
 }
 
 resource "aws_iam_openid_connect_provider" "github" {
