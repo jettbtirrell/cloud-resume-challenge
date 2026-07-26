@@ -359,7 +359,8 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
           "lambda:UpdateFunctionCode",
           "lambda:UpdateFunctionConfiguration",
           "lambda:GetFunction",
-          "lambda:GetPolicy"
+          "lambda:GetPolicy",
+          "lambda:ListVersionsByFunction"
         ]
         Resource = "arn:aws:lambda:us-east-1:945219712931:function:visitor-count-handler"
       },
@@ -420,7 +421,8 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
         Action = [
           "dynamodb:DescribeTable",
           "dynamodb:DescribeContinuousBackups",
-          "dynamodb:DescribeTimeToLive"
+          "dynamodb:DescribeTimeToLive",
+          "dynamodb:ListTagsOfResource"
         ]
         Resource = "arn:aws:dynamodb:us-east-1:945219712931:table/visitor-count"
       },
@@ -432,7 +434,9 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
           "s3:GetBucketPublicAccessBlock",
           "s3:GetBucketVersioning",
           "s3:GetBucketAcl",
-          "s3:GetEncryptionConfiguration"
+          "s3:GetEncryptionConfiguration",
+          "s3:ListBucket",
+          "s3:GetBucketLocation"
         ]
         Resource = "arn:aws:s3:::jett-cloud-resume-2026"
       },
