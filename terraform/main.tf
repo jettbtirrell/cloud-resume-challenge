@@ -309,3 +309,74 @@ resource "aws_route53_record" "www" {
     evaluate_target_health = false
   }
 }
+
+resource "aws_iam_role" "github_actions_backend_deploy" {
+  name = "github-actions-backend-deploy"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect = "Allow"
+      Principal = {
+        Federated = aws_iam_openid_connect_provider.github.arn
+      }
+      Action = "sts:AssumeRoleWithWebIdentity"
+      Condition = {
+        StringEquals = {
+          "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
+        }
+        StringLike = {
+          "token.actions.githubusercontent.com:sub" = [
+            "repo:jettbtirrell/cloud-resume-challenge:ref:refs/heads/main",
+            "repo:jettbtirrell@*/cloud-resume-challenge@*:ref:refs/heads/main"
+          ]
+        }
+      }
+    }]
+  })
+}
+
+resource "aws_iam_role_policy" "backend_deploy_permissions" {
+  name = "backend-deploy-permissions"
+  role = aws_iam_role.github_actions_backend_deploy.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid    = "LambdaDeploy"
+        Effect = "Allow"
+        Action = [
+          "lambda:UpdateFunctionCode",
+          "lambda:UpdateFunctionConfiguration",
+          "lambda:GetFunction",
+          "lambda:GetPolicy"
+        ]
+        Resource = "arn:aws:lambda:us-east-1:945219712931:function:visitor-count-handler"
+      },
+      {
+        Sid    = "DynamoDBManage"
+        Effect = "Allow"
+        Action = [
+          "dynamodb:DescribeTable"
+        ]
+        Resource = "arn:aws:dynamodb:us-east-1:945219712931:table/visitor-count"
+      },
+      {
+        Sid    = "ApiGatewayManage"
+        Effect = "Allow"
+        Action = [
+          "apigateway:GET",
+          "apigateway:PATCH"
+        ]
+        Resource = "arn:aws:apigateway:us-east-1::/apis/*"
+      },
+      {
+        Sid    = "IAMPassRole"
+        Effect = "Allow"
+        Action = ["iam:GetRole", "iam:PassRole"]
+        Resource = "arn:aws:iam::945219712931:role/service-role/visitor-count-handler-role-shfzwrmo"
+      }
+    ]
+  })
+}
