@@ -398,6 +398,62 @@ resource "aws_iam_role_policy" "backend_deploy_permissions" {
           "arn:aws:s3:::jett-tfstate-2026",
           "arn:aws:s3:::jett-tfstate-2026/*"
         ]
+      },
+      {
+        Sid    = "IAMReadForState"
+        Effect = "Allow"
+        Action = [
+          "iam:GetOpenIDConnectProvider",
+          "iam:GetRole",
+          "iam:GetRolePolicy",
+          "iam:ListRolePolicies",
+          "iam:ListAttachedRolePolicies",
+          "iam:GetPolicy",
+          "iam:GetPolicyVersion",
+          "iam:ListPolicyVersions"
+        ]
+        Resource = "*"
+      },
+      {
+        Sid    = "DynamoDBReadForState"
+        Effect = "Allow"
+        Action = [
+          "dynamodb:DescribeTable",
+          "dynamodb:DescribeContinuousBackups",
+          "dynamodb:DescribeTimeToLive"
+        ]
+        Resource = "arn:aws:dynamodb:us-east-1:945219712931:table/visitor-count"
+      },
+      {
+        Sid    = "S3ReadForState"
+        Effect = "Allow"
+        Action = [
+          "s3:GetBucketPolicy",
+          "s3:GetBucketPublicAccessBlock",
+          "s3:GetBucketVersioning",
+          "s3:GetBucketAcl",
+          "s3:GetEncryptionConfiguration"
+        ]
+        Resource = "arn:aws:s3:::jett-cloud-resume-2026"
+      },
+      {
+        Sid    = "CloudFrontReadForState"
+        Effect = "Allow"
+        Action = [
+          "cloudfront:GetDistribution",
+          "cloudfront:ListTagsForResource"
+        ]
+        Resource = "arn:aws:cloudfront::945219712931:distribution/EH2FPOYLSG1J4"
+      },
+      {
+        Sid    = "Route53ReadForState"
+        Effect = "Allow"
+        Action = [
+          "route53:GetHostedZone",
+          "route53:ListResourceRecordSets",
+          "route53:ChangeResourceRecordSets"
+        ]
+        Resource = "arn:aws:route53:::hostedzone/Z0234003OOTYC6RO8G4D"
       }
     ]
   })
