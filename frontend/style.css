@@ -94,9 +94,83 @@ hr { margin-bottom: -.5em; }
 section { margin-bottom: 2em; }
 
 /* =============================================================================
+   Video demo (hover preview + fullscreen)
+   ========================================================================== */
+.video-demo-trigger {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+.video-demo-trigger:hover,
+.video-demo-trigger:focus-visible {
+    background-color: #f4f8ff;
+}
+
+.video-hint {
+    font-size: 0.75em;
+    font-weight: normal;
+    font-style: italic;
+    color: #06e;
+    margin-left: 0.5em;
+    white-space: nowrap;
+}
+
+#video-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 40vw;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    z-index: 1000;
+    background: #000;
+    display: none;
+}
+#video-preview.visible { display: block; }
+
+#video-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+#video-modal.visible { display: flex; }
+
+#video-modal-player {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#video-modal-close {
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 1em;
+    cursor: pointer;
+}
+#video-modal-close:hover { background: rgba(255, 255, 255, 0.25); }
+
+@media (max-width: 600px) {
+    #video-preview { display: none !important; }
+}
+
+/* =============================================================================
    Print styles
    ========================================================================== */
 @media print {
     .btn { display: none; }
     a[href]:after { content: ""; }
+    .video-hint, #video-preview, #video-modal { display: none !important; }
 }

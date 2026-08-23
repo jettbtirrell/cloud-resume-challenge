@@ -45,3 +45,6 @@ terraform.rc
 # Optional: ignore plan files saved before destroying Terraform configuration
 # Uncomment the line below if you want to ignore planout files.
 # planout
+
+# Frontend media assets uploaded directly to S3 (excluded from the deploy sync)
+frontend/assets/

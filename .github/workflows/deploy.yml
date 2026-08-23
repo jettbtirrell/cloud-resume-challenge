@@ -26,7 +26,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Sync to S3
-        run: aws s3 sync frontend/ s3://jett-cloud-resume-2026 --delete
+        run: aws s3 sync frontend/ s3://jett-cloud-resume-2026 --delete --exclude "assets/*"
 
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id EH2FPOYLSG1J4 --paths "/*"

@@ -88,8 +88,8 @@
             <h2 class="title">TECHNICAL PROJECTS</h2>
             <hr>
 
-            <company class="company">
-                <h3 class="companyname"><b>AI Faceless Video Generation Platform</b></h3>
+            <company class="company video-demo-trigger" id="faceless-video-project" tabindex="0">
+                <h3 class="companyname"><b>AI Faceless Video Generation Platform</b> <span class="video-hint"><i class="fa fa-play-circle"></i> watch demo</span></h3>
                 <responsibilities class="responsibilities">
                     <ul>
                         <li>Architected and deployed a full-stack AI video generation platform, developing the
@@ -168,5 +168,14 @@
         </section>
     </main>
 </div> <!-- end container -->
+
+<video id="video-preview" muted loop playsinline preload="none" src="assets/faceless-demo.mp4"></video>
+
+<div id="video-modal">
+    <button id="video-modal-close" aria-label="Close video"><i class="fa fa-times"></i></button>
+    <video id="video-modal-player" controls playsinline preload="none" src="assets/faceless-demo.mp4"></video>
+</div>
+
+<script src="video_demo.js" defer></script>
 </body>
 </html>
